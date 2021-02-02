@@ -59,7 +59,7 @@ class ConnectusSmsChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        if (!$to = $notifiable->routeNotificationFor('connectus', $notification)) {
+        if (!$to = $notifiable->routeNotificationFor('connectusSms', $notification)) {
             $to = $notifiable->phone_number;
             if (!$to) {
                 return;
