@@ -32,5 +32,13 @@ return [
       |
       | Specifies the number of retries when receiving a 500 error response.
      */
-    'request_retries' => env('CONNECTUS_REQUEST_RETRIES', 3),
+    'request_retries' => (int) env('CONNECTUS_REQUEST_RETRIES', 3),
+    /*
+      |--------------------------------------------------------------------------
+      | Throw Exception On Error
+      |--------------------------------------------------------------------------
+      |
+      | Specifies if an exception has to be thrown when an error occurs in the channel.
+     */
+    'throw_exception_on_error' => (bool) env('CONNECTUS_THROW_EXCEPTION_ON_ERROR', false),
 ];

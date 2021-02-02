@@ -69,7 +69,10 @@ class ConnectusSmsChannel
         $message = $notification->toConnectusSms($notifiable);
 
         if (config('connectus.is_channel_active') === true) {
-            return $this->client->api()->sendSms($to, $message);
+            return $this->client->api()->sendSms(
+                            preg_replace('/[^\d]+/', '', $to)
+                            , $message
+            );
         } else {
             return true;
         }
